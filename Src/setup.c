@@ -173,6 +173,8 @@ void UART3_Init(void) {
     huart3.Init.Mode          = UART_MODE_TX_RX;
   #elif defined(DEBUG_SERIAL_USART3)
     huart3.Init.Mode          = UART_MODE_TX;
+  #elif defined(FEEDBACK_SERIAL_USART3)
+    huart3.Init.Mode          = UART_MODE_TX;
   #endif
   HAL_UART_Init(&huart3);
 
