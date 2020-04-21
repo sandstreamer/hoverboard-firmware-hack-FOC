@@ -65,8 +65,8 @@
  * Then you can verify voltage on debug output value 6 (to get calibrated voltage multiplied by 100).
 */
 #define BAT_FILT_COEF           655       // battery voltage filter coefficient in fixed-point. coef_fixedPoint = coef_floatingPoint * 2^16. In this case 655 = 0.01 * 2^16
-#define BAT_CALIB_REAL_VOLTAGE  3970      // input voltage measured by multimeter (multiplied by 100). In this case 43.00 V * 100 = 4300
-#define BAT_CALIB_ADC           1492      // adc-value measured by mainboard (value nr 5 on UART debug output)
+#define BAT_CALIB_REAL_VOLTAGE  3860      // input voltage measured by multimeter (multiplied by 100). In this case 43.00 V * 100 = 4300
+#define BAT_CALIB_ADC           1514      // adc-value measured by mainboard (value nr 5 on UART debug output)
 #define BAT_CELLS               10        // battery number of cells. Normal Hoverboard battery: 10s
 #define BAT_LVL2_ENABLE         0         // to beep or not to beep, 1 or 0
 #define BAT_LVL1_ENABLE         1         // to beep or not to beep, 1 or 0
@@ -335,16 +335,17 @@
   #define ADC_PROTECT_TIMEOUT 30        // ADC Protection: number of wrong / missing input commands before safety state is taken
   #define ADC_PROTECT_THRESH  300       // ADC Protection threshold below/above the MIN/MAX ADC values
   #define ADC1_MIN            1000      // min ADC1-value while poti at minimum-position (0 - 4095)
-  #define ADC1_MAX            2500      // max ADC1-value while poti at maximum-position (0 - 4095)
-  #define ADC2_MIN            500       // min ADC2-value while poti at minimum-position (0 - 4095)
-  #define ADC2_MAX            2200      // max ADC2-value while poti at maximum-position (0 - 4095)
+  #define ADC1_MAX            2200      // max ADC1-value while poti at maximum-position (0 - 4095)
+  #define ADC2_MIN            0         // min ADC2-value while poti at minimum-position (0 - 4095)
+  #define ADC2_MAX            4095      // max ADC2-value while poti at maximum-position (0 - 4095)
   #define SPEED_COEFFICIENT   16384     //  1.0f
   #define STEER_COEFFICIENT   0         //  0.0f
   // #define INVERT_R_DIRECTION           // Invert rotation of right motor
   // #define INVERT_L_DIRECTION           // Invert rotation of left motor
-  #define SIDEBOARD_SERIAL_USART3
+  // #define SIDEBOARD_SERIAL_USART3
   #define FEEDBACK_SERIAL_USART3        // right sensor board cable, disable if I2C (nunchuk or lcd) is used!
   // #define DEBUG_SERIAL_USART3          // right sensor board cable, disable if I2C (nunchuk or lcd) is used!
+  //#define DEBUG_SERIAL_ASCII
 #endif
 
 // Multiple tap detection: default DOUBLE Tap on Brake pedal (4 pulses)
